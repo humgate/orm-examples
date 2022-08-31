@@ -30,7 +30,7 @@ public class App
 
         List<Account> accounts = query.getResultList();
 
-        //accounts.forEach(a -> System.out.println(a.getDescription() + " " + a.getTransactionsWithSource().size()));
+        accounts.forEach(a -> System.out.println(a.getDescription() + " " + a.getTransactionsWithSource().size()));
 
     }
 }

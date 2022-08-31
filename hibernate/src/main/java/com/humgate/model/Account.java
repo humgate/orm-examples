@@ -7,7 +7,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 @Setter @Getter @NoArgsConstructor
 public class Account implements Serializable {
@@ -19,7 +19,7 @@ public class Account implements Serializable {
 
     private String description;
 
-//    private List<Transaction> transactionsWithSource;
+    private Set<Transaction> transactionsWithSource;
 
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "target")
 //    private List<Transaction> transactionsWithTarget;

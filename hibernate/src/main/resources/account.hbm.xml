@@ -16,6 +16,11 @@
 
         <property name = "number" column = "number" type = "long" not-null="true"/>
         <property name = "description" column = "description" type = "string"/>
-<!--        <many-to-one name="transactions" class="Account"/>-->
+        <set name="transactionsWithSource" table="student" inverse="true" cascade="save-update" lazy="true" fetch="select">
+            <key>
+                <column name="source" not-null="true" />
+            </key>
+            <one-to-many class="com.humgate.model.Transaction" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -17,6 +17,6 @@
         <property name = "amount" column = "amount" type = "java.math.BigDecimal" not-null="true"/>
         <many-to-one name="source" class="com.humgate.model.Account" not-null="true"/>
         <many-to-one name="target" class="com.humgate.model.Account" not-null="true"/>
-        <property name = "timestamp" column = "timestamp" type = "timestamp" not-null="true"/>
+        <property name = "timestamp" column = "timestamp" type = "java.time.Instant" not-null="true"/>
     </class>
 </hibernate-mapping>
