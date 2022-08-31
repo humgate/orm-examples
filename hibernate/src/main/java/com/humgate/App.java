@@ -25,8 +25,11 @@ public class App
         // Initialize Session Object
         Session session = sessionFactory.openSession();
 
+//        Query<Account> query = session.createQuery(
+//                "select a from Account a join fetch a.transactionsWithSource", Account.class);
+
         Query<Account> query = session.createQuery(
-                "select a from Account a", Account.class);
+                "select a from Account a join fetch a.transactionsWithSource", Account.class);
 
         List<Account> accounts = query.getResultList();
 

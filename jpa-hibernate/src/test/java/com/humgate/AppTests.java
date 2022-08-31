@@ -11,6 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.humgate.repository.AccountRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = "/context.xml")
@@ -27,6 +28,7 @@ public class AppTests {
         List<Account> accounts = accRepo.getAllJoinFetch();
         /*один запрос с join*/
 
+        System.out.println(accounts.size());
         accounts.forEach(a -> System.out.println(a.getDescription() + " " + a.getTransactionsWithSource().size()));
         /*здесь уже нет обращений к бд, все запрощенные данные выводятся из полученных выше объектов*/
     }

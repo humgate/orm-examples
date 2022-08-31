@@ -12,13 +12,9 @@ import java.time.Instant;
 public class Transaction implements Serializable{
     private static final long serialVersionUID = 1L;
     private Long id;
-
     private BigDecimal amount;
-
     private Account source;
-
     private Account target;
-
     private Instant timestamp;
 
     public Transaction(BigDecimal amount, Account source, Account target, Instant timestamp) {

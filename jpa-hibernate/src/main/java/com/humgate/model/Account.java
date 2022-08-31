@@ -3,12 +3,15 @@ package com.humgate.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter @Setter @NoArgsConstructor
@@ -28,12 +31,14 @@ public class Account implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "source")
 //    @BatchSize(size = 10)
-      @LazyCollection(LazyCollectionOption.EXTRA)
-//    @Fetch(FetchMode.SELECT)
-    private List<Transaction> transactionsWithSource;
-//
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "target")
-//    private List<Transaction> transactionsWithTarget;
+    @LazyCollection(LazyCollectionOption.EXTRA)
+    @Fetch(FetchMode.SELECT)
+    private Set<Transaction> transactionsWithSource;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "target")
+    @LazyCollection(LazyCollectionOption.EXTRA)
+    @Fetch(FetchMode.SELECT)
+    private Set<Transaction> transactionsWithTarget;
 
     public Account(long number, String description) {
         this.number = number;
