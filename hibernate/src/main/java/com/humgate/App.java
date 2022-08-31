@@ -5,15 +5,11 @@ import com.humgate.model.Transaction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-import javax.persistence.TypedQuery;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -29,12 +25,12 @@ public class App
         // Initialize Session Object
         Session session = sessionFactory.openSession();
 
-        TypedQuery<Account> query = session.createQuery(
-                "select a from Account a join fetch a.transactionsWithSource", Account.class);
+        Query<Account> query = session.createQuery(
+                "select a from Account a", Account.class);
 
         List<Account> accounts = query.getResultList();
 
-        accounts.forEach(a -> System.out.println(a.getDescription() + " " + a.getTransactionsWithSource().size()));
+        //accounts.forEach(a -> System.out.println(a.getDescription() + " " + a.getTransactionsWithSource().size()));
 
     }
 }

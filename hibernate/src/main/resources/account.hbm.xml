@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "com.humgate.model.Account" table = "accounts">
+
+        <meta attribute = "class-description">
+            This class contains the account details.
+        </meta>
+
+        <id name = "id" type = "long" column = "id">
+            <generator class="identity"/>
+        </id>
+
+        <property name = "number" column = "number" type = "long" not-null="true"/>
+        <property name = "description" column = "description" type = "string"/>
+<!--        <many-to-one name="transactions" class="Account"/>-->
+    </class>
+</hibernate-mapping>
