@@ -1,12 +1,14 @@
-import model.Account;
+package com.humgate;
+
+import com.humgate.repository.TransactionsRepository;
+import com.humgate.model.Account;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import repository.AccountRepository;
-import repository.TransactionsRepository;
+import com.humgate.repository.AccountRepository;
 
 import java.util.List;
 

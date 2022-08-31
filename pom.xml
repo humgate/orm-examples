@@ -4,10 +4,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.humgate</groupId>
-  <artifactId>parent-module</artifactId>
+  <artifactId>orm-examples-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>parent-module</name>
+  <name>orm-examples-parent</name>
   <packaging>pom</packaging>
 
   <modules>

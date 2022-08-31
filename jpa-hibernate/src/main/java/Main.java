@@ -1,7 +1,8 @@
+import com.humgate.model.Account;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
-import repository.AccountRepository;
-import repository.TransactionsRepository;
+import com.humgate.repository.AccountRepository;
+import com.humgate.repository.TransactionsRepository;
 
 @Transactional
 public class Main {

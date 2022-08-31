@@ -1,4 +1,4 @@
-package model;
+package com.humgate.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,12 +7,15 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Getter @Setter @NoArgsConstructor
-@Table(name = "account")
-public class Account {
+@Table(name = "accounts")
+public class Account implements Serializable {
+    private static final long serialVersionUID = 2L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

@@ -1,6 +1,6 @@
-package repository;
+package com.humgate.repository;
 
-import model.Transaction;
+import com.humgate.model.Transaction;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
